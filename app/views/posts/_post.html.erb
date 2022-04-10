@@ -7,3 +7,4 @@
     <p><span class="font-black mr-1">&gt;</span><%= line_breaks post.body %></p>
   </div>
 <% end %>
+<%= button_to "Likes #{post.likes.count}", post_likes_path(post), params: { like: { likeable_id: post.id, likeable_type: "Post" } }, method: :post %>
