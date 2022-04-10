@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
 
   validates :body, presence: true
+
+  has_many :likes, as: :likeable
 end
 
 # == Schema Information
