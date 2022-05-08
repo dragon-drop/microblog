@@ -1,0 +1,2 @@
+document.getElementById("like-post-<%= @post.id %>").innerHTML = "<%= escape_javascript(render partial: 'liked', locals: { post: @post } ) %>"
+document.getElementById("users_likes_total_count_<%= @post.id %>").innerHTML = "<%= escape_javascript( @post.users_likes_total_count ) %>"
