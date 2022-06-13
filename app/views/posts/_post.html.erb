@@ -7,3 +7,12 @@
     <p><span class="font-black mr-1">&gt;</span><%= line_breaks post.body %></p>
   </div>
 <% end %>
+
+<div class="flex items-center justify-between">
+  <% if post.find_like(current_user).present? %>
+    <%= button_to 'Unlike', post_like_path(post, post.find_like(current_user)), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(post), method: :post %>
+  <% end %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+</div>
