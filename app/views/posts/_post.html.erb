@@ -5,5 +5,6 @@
       <%= timeago post.created_at, "text-xs" %>
     </div>
     <p><span class="font-black mr-1">&gt;</span><%= line_breaks post.body %></p>
+    <p>Total likes : <%=  post.likes.count %></p>
   </div>
 <% end %>

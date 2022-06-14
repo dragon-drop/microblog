@@ -63,6 +63,9 @@ group :development do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
   gem "annotate"
 
+  # Brakeman detects security vulnerabilities in Ruby on Rails applications via static analysis. (https://github.com/presidentbeef/brakeman)
+  gem "brakeman", "~> 5.2", ">= 5.2.3"
+
   # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
   gem "annotate_gem", require: false
 
