@@ -3,7 +3,7 @@
 ## The Challenge
 
 * _a micro blog_ is a micro-blog, like Twitter.
-* A working example of the app can be seen at https://amicroblog.herokuapp.com
+* A working example of the app can be seen at https://a-microblog.herokuapp.com
 * Users can browse the list of posts, and individual posts, without logging in
 * Users need to login to post
 
