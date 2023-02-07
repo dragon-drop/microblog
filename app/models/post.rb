@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_rich_text :body
 
   validates :body, presence: true
+
+  after_create_commit { broadcast_prepend_to "posts" }
 end
 
 # == Schema Information
