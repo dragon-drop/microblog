@@ -11,9 +11,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-[#F5F7F9]">
+    <header class="bg-white pt-8 pb-5 px-6">
+      <h1 class="text-3xl font-bold">A microblog</h1>
+    </header>
+    <main class="bg-[#F5F7F9] px-6 pt-4 pb-10">
       <%= yield %>
     </main>
+    <footer class="fixed bottom-0 h-10 bg-white w-full flex justify-around shadow-inner p-2">
+      <%= active_link_to "Home", root_path %>
+      <%= link_to "Profile", "#" %>
+    </footer>
   </body>
 </html>

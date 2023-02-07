@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+trix-toolbar { display: none; }
+
+html, body { min-height: 100vh }
+
+body > footer {
+  position: fixed;
+  bottom: 0;
+}
+
+footer .active {
+  font-weight: bold;
+}

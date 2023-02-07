@@ -1,4 +1,9 @@
-<div>
-  <%= post.body %>
-  <%= post.user.id %>
+<div class="bg-white p-2 space-y-4 mb-5 rounded">
+  <div class="flex space-x-2 items-end">
+    <div class="bg-indigo-400 h-10 w-10 rounded-full"></div>
+    <div class="text-gray-600">@<%= post.user.email.split('@').first %></div>
+  </div>
+  <div class="text-gray-700">
+    <%= post.body %>
+  </div>
 </div>

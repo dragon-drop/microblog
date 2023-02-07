@@ -51,6 +51,9 @@ gem "image_processing", "~> 1.2"
 # Flexible authentication solution for Rails with Warden (https://github.com/heartcombo/devise)
 gem "devise", "~> 4.8"
 
+# ActionView helper to render currently active links (http://github.com/comfy/active_link_to)
+gem "active_link_to"
+
 group :development, :test do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (https://github.com/ctran/annotate_models)
   gem "annotate"
