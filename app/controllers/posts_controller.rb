@@ -11,6 +11,8 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to root_path }
       else
+        format.turbo_stream
+
         format.html do
           flash[:post_errors] = @post.errors.full_messages
           redirect_to root_path
