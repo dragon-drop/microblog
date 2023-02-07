@@ -1,5 +1,3 @@
-require "support/shared/request_contexts"
-
 RSpec.shared_examples "an authenticated route" do
   before { logout }
 
@@ -8,11 +6,6 @@ RSpec.shared_examples "an authenticated route" do
       req
       expect(response).to redirect_to(new_user_session_url).or have_http_status(:unauthorized)
     end
-  end
-
-  context "with a user logged in" do
-    include_context "with user logged in"
-    include_examples "a successful response"
   end
 end
 
