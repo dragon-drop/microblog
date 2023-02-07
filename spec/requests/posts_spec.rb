@@ -30,10 +30,10 @@ RSpec.describe "Posts requests" do
           expect(Post.last.user).to eq user
         end
 
-        it "redirects to the new post's page" do
+        it "redirects to the root path" do
           req
 
-          expect(response).to redirect_to post_url(Post.last)
+          expect(response).to redirect_to root_path
         end
       end
 
@@ -44,9 +44,10 @@ RSpec.describe "Posts requests" do
           expect { req }.not_to change(Post, :count)
         end
 
-        it "renders the index template" do
+        it "redirects to the root path" do
           req
-          expect(response).to render_template :index
+
+          expect(response).to redirect_to root_path
         end
       end
     end

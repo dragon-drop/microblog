@@ -1,4 +1,8 @@
-<%= form_with model: @post do |form| %>
+<%= form_with model: @post, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset"} do |form| %>
   <%= form.rich_text_area :body %>
   <%= form.submit "Post" %>
+<% end %>
+
+<%= turbo_frame_tag "posts" do %>
+  <%= render @posts %>
 <% end %>
