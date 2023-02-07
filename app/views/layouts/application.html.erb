@@ -11,7 +11,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-[#F5F7F9]">
+  <body class="bg-zinc-900 max-w-xl mx-auto">
     <header class="bg-white pt-8 pb-5 px-6">
       <h1 class="text-3xl font-bold">A microblog</h1>
     </header>
@@ -19,7 +19,7 @@
       <%= yield %>
     </main>
     <% if user_signed_in? %>
-      <footer class="fixed bottom-0 h-10 bg-white w-full flex justify-around shadow-inner p-2">
+      <footer class="fixed bottom-0 h-10 bg-white max-w-xl w-full flex justify-around shadow-inner p-2">
         <%= active_link_to "Home", root_path %>
         <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
       </footer>
