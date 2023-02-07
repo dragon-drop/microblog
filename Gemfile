@@ -48,6 +48,9 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Flexible authentication solution for Rails with Warden (https://github.com/heartcombo/devise)
+gem "devise", "~> 4.8"
+
 group :development, :test do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (https://github.com/ctran/annotate_models)
   gem "annotate"
