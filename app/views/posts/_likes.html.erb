@@ -1,0 +1,10 @@
+<%= turbo_frame_tag "#{dom_id(post)}_likes" do %>
+
+  <div class="pointer-events-auto relative inline-flex rounded-md bg-white text-[0.8125rem] font-medium leading-5 text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50 hover:text-slate-900">
+    <%= button_to like_text(post, user),
+      like_post_path(post),
+      method: :patch, data: { turbo_frame: '_top', }, class: "flex py-2 px-3"
+    %>
+    <div class="border-l border-slate-400/20 py-2 px-2.5"><%= post.likes.liked.count %></div>
+  </div>
+<% end %>

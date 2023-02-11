@@ -4,5 +4,5 @@
 
 <%= turbo_stream_from "posts" %>
 <%= turbo_frame_tag "posts" do %>
-  <%= render @posts %>
+<%= render @posts, user: current_user %>
 <% end %>

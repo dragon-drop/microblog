@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  include Voteable
+
   belongs_to :user
   has_rich_text :body
 

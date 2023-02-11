@@ -52,4 +52,18 @@ RSpec.describe "Posts requests" do
       end
     end
   end
+
+  describe "PATCH /posts#like" do
+    let(:post) { create(:post, user: user) }
+    let(:req) { patch like_post_path(post) }
+
+    it_behaves_like "an authenticated route"
+    context "with a user logged in" do
+      include_context "with user logged in"
+
+      it "creates a Vote that belongs to the liked post", :aggregate_failures do
+        expect { req }.to change(post.likes, :count).by 1
+      end
+    end
+  end
 end
