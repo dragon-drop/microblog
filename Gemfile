@@ -94,4 +94,6 @@ group :test do
 
   # Simple one-liner tests for common Rails functionality (https://matchers.shoulda.io/)
   gem "shoulda-matchers", "~> 5.0"
+
+  gem "faker"
 end
