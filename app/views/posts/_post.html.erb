@@ -6,4 +6,15 @@
   <div class="text-gray-700">
     <%= post.body %>
   </div>
+  <br>
+  <b>Likes: </b> <%= " #{post.likes.count}" %>
+
+  <div class="border-t border-gray-100 px-2 py-2 flex">
+    <%= button_to "Like", { :controller => :likes, :action => :create, :post_id => post.id, method: :post },
+                            { class: "bg-black text-white py-2 px-4 rounded ml-auto" } %>
+    &nbsp;
+    <%= button_to "Unlike", { :controller => :likes, :action => :destroy, :post_id => post.id, method: :post },
+                            { class: "bg-black text-white py-2 px-4 rounded ml-auto" } %>
+  </div>
+
 </div>

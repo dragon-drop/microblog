@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_rich_text :body
-
+  has_many :likes
   validates :body, presence: true
 
   after_create_commit { broadcast_prepend_to "posts" }
