@@ -1,10 +1,16 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_rich_text :body
+  has_many :likes, as: :likeable
 
   validates :body, presence: true
 
   after_create_commit { broadcast_prepend_to "posts" }
+
+
+  def liked?(user)
+    likes.where(user: user).any?
+  end
 end
 
 # == Schema Information

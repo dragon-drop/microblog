@@ -6,4 +6,7 @@
   <div class="text-gray-700">
     <%= post.body %>
   </div>
+  <div id="<%= "#{dom_id(post)}_likes" %>">
+    <%= render "likes/likes", post: post, user: Current.user %>
+  </div>
 </div>
