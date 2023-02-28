@@ -6,4 +6,17 @@
   <div class="text-gray-700">
     <%= post.body %>
   </div>
+
+  <div class="text-red-800"> Like Count: <%= post.likes.count %></div>
+
+  <div>
+    <% if post.user.id != user.id %>
+      <% if post.has_user_liked?(user) %>
+        <% @like = Like.find_by(post: post, user: user) %>
+        <%= button_to "Un-Like", post_like_path(post, @like.id), action: "destroy", method: :delete, class: "bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"%>
+      <% else %>
+        <%= button_to "Like", post_likes_path(post), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

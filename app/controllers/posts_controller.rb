@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params.merge(user: current_user))
     respond_to do |format|
       if @post.save
+        @post.broadcast_prepend_to "posts", locals: { user: current_user }
         format.html { redirect_to root_path }
       else
         format.turbo_stream
