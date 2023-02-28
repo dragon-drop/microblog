@@ -5,7 +5,13 @@ class Post < ApplicationRecord
 
   validates :body, presence: true
 
-  after_create_commit { broadcast_prepend_to "posts" }
+  # Moved to controller (might be a terrible idea) in order to pass devise variables 
+  # through to the newly rendered partial
+  # after_create_commit { broadcast_prepend_to "posts" }
+
+  def has_user_liked?(user)
+    user.likes.pluck(:post_id).include?(id)
+  end
 end
 
 # == Schema Information
