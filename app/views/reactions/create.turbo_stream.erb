@@ -1,0 +1,4 @@
+<%= turbo_stream.update "reactions_for_post_#{@post.id}" do %>
+  <%= render 'reactions/reaction', post: @post %>
+<% end %>
+

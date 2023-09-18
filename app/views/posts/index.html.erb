@@ -1,8 +1,13 @@
-<%= turbo_frame_tag "post_form" do %>
-<%= render "form", post: @post %>
+<% if user_signed_in? %>
+  <%= turbo_frame_tag "post_form" do %>
+    <%= render "form", post: @post %>
+  <% end %>
+<% else %>
+  <div class="bottom-0 h-10 bg-white max-w-xl w-full mb-5 flex justify-around shadow-inner p-2">
+    <%= link_to "Login", new_user_session_path %>
+  </div>
 <% end %>
 
-<%= turbo_stream_from "posts" %>
 <%= turbo_frame_tag "posts" do %>
-  <%= render @posts %>
+  <%= render @posts, show_details: true %>
 <% end %>

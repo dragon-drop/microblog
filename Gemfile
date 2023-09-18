@@ -21,6 +21,9 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+# counter cache for Turbo applications
+gem "counter_culture"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -54,12 +57,17 @@ gem "devise", "~> 4.8"
 # ActionView helper to render currently active links (http://github.com/comfy/active_link_to)
 gem "active_link_to"
 
+# Authorization
+gem "pundit"
+
 group :development, :test do
   # Annotates Rails Models, routes, fixtures, and others based on the database schema. (https://github.com/ctran/annotate_models)
   gem "annotate"
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
+
+  gem "pry"
 end
 
 group :development do

@@ -1,1 +1,9 @@
-<%= turbo_stream.replace @post, partial: "posts/form", locals: { post: @post } %>
+<%= turbo_stream.replace @post, partial: "posts/form", locals: { post: @post, flash: flash } %>
+<%= turbo_stream.update 'alert' do %>
+  <%= render 'shared/alert', flash: flash %>
+<% end %>
+<%= turbo_stream.prepend 'posts' do %>
+  <% if @post.valid? %>
+    <%= render 'posts/post', post: @post, show_details: true %>
+  <% end %>
+<% end %>
