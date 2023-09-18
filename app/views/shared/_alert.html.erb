@@ -1,0 +1,10 @@
+<% if flash['alert'].present? %>
+  <div class="bg-red-100 px-2">
+    <ul>
+      <% flash['alert'].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

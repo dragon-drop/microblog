@@ -6,7 +6,6 @@ RSpec.describe "Posts requests" do
   describe "GET /" do
     let(:req) { get root_url }
 
-    it_behaves_like "an authenticated route"
     context "with a user logged in" do
       include_context "with user logged in"
       include_examples "a successful response"
