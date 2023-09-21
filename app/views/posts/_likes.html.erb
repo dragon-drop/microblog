@@ -1,0 +1,13 @@
+<div id="post_<%= post.id %>_likes" class="flex">
+  <div class="flex-grow">
+    &hearts; <%= post.likes_count %>
+  </div>
+
+  <% if user_signed_in? %>
+    <% if current_user.likes?(post) %>
+      <%= link_to "Unlike", unlike_post_path(post), data: { turbo_method: :delete }, class: "ml-auto" %>
+    <% else %>
+      <%= link_to "Like", like_post_path(post), data: { turbo_method: :post }, class: "ml-auto" %>
+    <% end %>
+  <% end %>
+</div>

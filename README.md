@@ -1,27 +1,4 @@
 # A Micro Blog - Candidate Code Assessment
-
-## Notes
-
-* I use docker compose to run PostgreSQL and Redis:
-
-  `docker compose up -d`
-
-* Run Rails app
-
-  `rails db:create`
-
-  `rails db:migrate`
-
-  `rails db:migrate RAILS_ENV=test`
-
-  `rails assets:precompile`
-
-  `rails s`
-
-* Run tests
-
-  `rspec`
-
 ## The Challenge
 
 * _a micro blog_ is a micro-blog, like Twitter.
