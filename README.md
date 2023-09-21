@@ -1,5 +1,4 @@
 # A Micro Blog - Candidate Code Assessment
-
 ## The Challenge
 
 * _a micro blog_ is a micro-blog, like Twitter.
